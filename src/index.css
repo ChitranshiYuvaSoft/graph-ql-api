@@ -11,3 +11,360 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* From Uiverse.io by aryamitra06 */ 
+.loader {
+  display: flex;
+  align-items: center;
+}
+
+.bar {
+  display: inline-block;
+  width: 3px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 10px;
+  animation: scale-up4 1s linear infinite;
+}
+
+.bar:nth-child(2) {
+  height: 35px;
+  margin: 0 5px;
+  animation-delay: .25s;
+}
+
+.bar:nth-child(3) {
+  animation-delay: .5s;
+}
+
+@keyframes scale-up4 {
+  20% {
+    background-color: #d3a4a4;
+    transform: scaleY(1.5);
+  }
+
+  40% {
+    transform: scaleY(1);
+  }
+}
+
+
+/* Home page */
+/* General container and color theme */
+
+
+.custom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 2rem; */
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  color: #333;
+  min-height: 100vh; /* Full height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+/* Header section */
+.header {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  border-bottom: 2px solid #8ec5fc;
+}
+
+.me-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a47a3;
+}
+
+.me-email {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Title styling */
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a47a3;
+}
+
+/* Link styling */
+.link {
+  color: #4a47a3;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: #6c5ce7;
+}
+
+/* Card styling */
+.custom-card {
+  width: 100%;
+  max-width: 900px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures the overflow is contained */
+}
+
+/* Card header */
+.custom-card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a47a3;
+  text-align: center;
+}
+
+/* Table styling */
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* Scrollable table container */
+.table-scroll {
+  max-height: 50vh; /* Set max height to ensure scrolling */
+  overflow-y: auto; /* Enable vertical scroll */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Button styling */
+.btn-view {
+  background-color: #4a47a3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-view:hover {
+  background-color: #6c5ce7;
+  transform: translateY(-2px);
+}
+
+.btn-view:active {
+  transform: translateY(1px); 
+}
+
+/* Pagination styling */
+.pagination {
+  margin-top: 0.5rem;
+}
+
+.select {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  cursor: pointer;
+}
+
+/* Modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 10;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .custom-container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    margin-top: 1rem;
+  }
+}
+
+/* Location CSS */
+/* Main container styling */
+.location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  color: #333;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Header section */
+.location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #8ec5fc;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4a47a3;
+}
+
+.home-link {
+  color: #4a47a3;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.home-link:hover {
+  color: #6c5ce7;
+}
+
+/* Card styling */
+.location-card {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Each section (Countries, States, Cities) */
+.location-section {
+  width: 30%;
+  text-align: center;
+  position: relative; /* Position for scrollbar styling */
+}
+
+.section-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #4a47a3;
+}
+
+/* Button styling */
+.section-button {
+  background-color: #4a47a3;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.section-button:hover {
+  background-color: #6c5ce7;
+  transform: translateY(-2px);
+}
+
+.section-button:active {
+  transform: translateY(1px); /* Click effect */
+}
+
+.placeholder-text {
+  font-size: 1rem;
+  color: #888;
+  font-weight: 500;
+}
+
+/* List styling */
+.list {
+  list-style: none;
+  padding: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 0.5rem;
+  background-color: #f9f9f9;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #8ec5fc #f9f9f9; /* Scrollbar color for Firefox */
+}
+
+.list::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.list::-webkit-scrollbar-track {
+  background: #f9f9f9; /* Track color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.list::-webkit-scrollbar-thumb {
+  background-color: #8ec5fc; /* Scrollbar color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.list-item {
+  padding: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border-radius: 5px;
+}
+
+.list-item:hover {
+  background-color: #8ec5fc;
+  transform: scale(1.02);
+  color: #333;
+}
