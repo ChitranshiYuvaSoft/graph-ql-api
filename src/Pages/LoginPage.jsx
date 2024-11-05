@@ -29,8 +29,10 @@ const LoginPage = () => {
   };
 
   useEffect(() => {
-    if (token) {
-      navigate("/home");
+    if (!token) {
+      navigate("/");
+    }else{
+      navigate("home")
     }
   }, [token]);
 

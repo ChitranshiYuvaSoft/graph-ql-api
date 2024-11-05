@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { citiesData, countryData, statesData } from "../Redux/location/locationSlice";
 import { Link } from "react-router-dom";
@@ -12,12 +12,12 @@ const LocationPage = () => {
 
   const getCountryId = (id) => {
     setCountryId(id);
-    dispatch(statesData({ statesId: id })); // Changed countryId to id
+    dispatch(statesData({ statesId: countryId }));
   };
 
   const getStatesId = (id) => {
     setStatesId(id);
-    dispatch(citiesData({ citiesId: id })); // Changed stateId to id
+    dispatch(citiesData({ citiesId: stateId }));
   };
 
   const showCountryData = () => {

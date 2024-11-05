@@ -3,17 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { allUsers } from "../Redux/auth/authSlice";
 import { meData, userDetails } from "../Redux/data/dataSlice";
-import Loading from "../Components/Loading";
-import dataServices from "../Redux/data/dataService";
-import { useQuery } from "@apollo/client";
 
 const HomePage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  const { loading, error, data } = useQuery(dataServices.USER_DATA, {
-    errorPolicy: "all",
-  });
 
   const { users } = useSelector((state) => state.auth);
   const { UserDetails, me } = useSelector((state) => state.data);
@@ -49,6 +42,11 @@ const HomePage = () => {
     dispatch(meData());
   }, [pageNo, pageSize]);
 
+  const logoutUser = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  }
+
   return (
     <div className="container-fluied custom-container">
       <div className="header d-flex justify-content-between align-items-center mb-4">
@@ -60,6 +58,7 @@ const HomePage = () => {
         <Link to="/location" className="link">
           <h6>Location</h6>
         </Link>
+        <button className="bg-danger text-light py-1 px-2 logout-btn" onClick={logoutUser}>Logout</button>
       </div>
 
       <div className="custom-card">
